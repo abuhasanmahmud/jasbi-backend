@@ -25,10 +25,6 @@ app.use("/api/orders/", orderRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-app.get(port, (req, res) => {
-  res.json({ message: "success" });
-});
-
 app.listen(port, () => {
   console.log(`server is runningss port ${port}`);
 });

@@ -49,21 +49,21 @@ const calculateOrderAmount = (items) => {
   return 1400;
 };
 
-const createPaymentIntent = asyncHandler(async (req, res) => {
-  const { items } = req.body;
-  console.log("items", items);
-  // Create a PaymentIntent with the order amount and currency
-  const paymentIntent = await stripe.paymentIntents.create({
-    amount: calculateOrderAmount(items),
-    currency: "usd",
-    automatic_payment_methods: {
-      enabled: true,
-    },
-  });
+// const createPaymentIntent = asyncHandler(async (req, res) => {
+//   const { items } = req.body;
+//   console.log("items", items);
+//   // Create a PaymentIntent with the order amount and currency
+//   const paymentIntent = await stripe.paymentIntents.create({
+//     amount: calculateOrderAmount(items),
+//     currency: "usd",
+//     automatic_payment_methods: {
+//       enabled: true,
+//     },
+//   });
 
-  res.send({
-    clientSecret: paymentIntent.client_secret,
-  });
-});
+//   res.send({
+//     clientSecret: paymentIntent.client_secret,
+//   });
+// });
 
-export { getAllOrders, createNewOrder, paymentOrderByStripe, createPaymentIntent };
+export { getAllOrders, createNewOrder, paymentOrderByStripe };
