@@ -3,14 +3,14 @@
   "name": "ecommerce",
   "builds": [
     {
-      "src": "index.js",
+      "src": "*.js",
       "use": "@now/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/index.js"
+      "dest": "/"
     }
   ]
 }
