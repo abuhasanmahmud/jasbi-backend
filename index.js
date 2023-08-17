@@ -21,6 +21,12 @@ app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/orders/", orderRoutes);
 
+app.get("/", (req, res, next) => {
+  res.status(200).json({
+    message: "bad request",
+  });
+});
+
 //error handeler
 app.use(notFound);
 app.use(errorHandler);
